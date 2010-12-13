@@ -17,6 +17,15 @@ group :development, :test do
   gem "factory_girl_rails"
   gem "shoulda"
   gem "webrat"
+
+  # cucumber gems
+  gem "cucumber"
+  gem "cucumber-rails"
+  gem "capybara"
+  gem "database_cleaner"
+  gem "spork"
+  gem "launchy"    # So you can do Then show me the page
+  
 end
 
 # Use unicorn as the web server
