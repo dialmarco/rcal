@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @practice.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @practice.description %>
+</p>
+
+<p>
+  <b>Acronym:</b>
+  <%= @practice.acronym %>
+</p>
+
+
+<%= link_to 'Edit', edit_practice_path(@practice) %> |
+<%= link_to 'Back', practices_path %>
