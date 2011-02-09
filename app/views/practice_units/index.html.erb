@@ -12,7 +12,7 @@
 <% @practice_units.each do |practice_unit| %>
   <tr>
     <td><%= practice_unit.unit_name %></td>
-    <td><%= practice_unit.unit %></td>
+    <td><%= practice_unit.unit.units %></td>
     <td><%= link_to 'Show', practice_unit %></td>
     <td><%= link_to 'Edit', edit_practice_unit_path(practice_unit) %></td>
     <td><%= link_to 'Destroy', practice_unit, :confirm => 'Are you sure?', :method => :delete %></td>

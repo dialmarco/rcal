@@ -16,8 +16,8 @@
     <%= f.text_field :unit_name %>
   </div>
   <div class="field">
-    <%= f.label :unit %><br />
-    <%= f.text_field :unit %>
+    <%= f.label :unit_id, "Units" %><br />
+    <%= f.select :unit_id, units.collect { |u| [u.units, u.id] }, { :include_blank => true } %>
   </div>
   <div class="actions">
     <%= f.submit %>
