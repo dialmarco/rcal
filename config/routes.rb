@@ -6,6 +6,8 @@ Calendar::Application.routes.draw do
 
   resources :practices
 
+  resources :user_practices
+
   devise_for :users
 
   root :to => "pages#home"

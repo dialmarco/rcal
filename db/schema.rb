@@ -10,7 +10,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110208073920) do
+ActiveRecord::Schema.define(:version => 20110209205440) do
+
+  create_table "default_practices", :force => true do |t|
+    t.integer  "amount"
+    t.integer  "practice_units_id"
+    t.integer  "practice_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "practice_units", :force => true do |t|
     t.string   "unit_name"
@@ -29,6 +37,15 @@ ActiveRecord::Schema.define(:version => 20110208073920) do
 
   create_table "units", :force => true do |t|
     t.string   "units"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_practices", :force => true do |t|
+    t.integer  "practice_units_id"
+    t.integer  "practice_id"
+    t.integer  "user_id"
+    t.integer  "amount"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
