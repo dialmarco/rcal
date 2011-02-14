@@ -10,11 +10,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110209205440) do
+ActiveRecord::Schema.define(:version => 20110214211712) do
 
   create_table "default_practices", :force => true do |t|
     t.integer  "amount"
-    t.integer  "practice_units_id"
+    t.integer  "practice_unit_id"
     t.integer  "practice_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(:version => 20110209205440) do
   end
 
   create_table "user_practices", :force => true do |t|
-    t.integer  "practice_units_id"
+    t.integer  "practice_unit_id"
     t.integer  "practice_id"
     t.integer  "user_id"
     t.integer  "amount"

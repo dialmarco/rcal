@@ -1,0 +1,10 @@
+%h1 User Practice
+= form_tag(:controller => "user_practices", :action => "create") do
+  - default_practice.each do |p|
+    %p= p.practice.name
+    %p= text_field_tag("#{p.practice.acronym}_amount", p.amount)
+    %p= p.practice_unit.unit_name
+
+  %p= text_field_tag "other_par"
+  = submit_tag "Create Practice"
+%p hi
