@@ -8,6 +8,8 @@ Calendar::Application.routes.draw do
 
   resources :user_practices
 
+  resources :practice_entries
+
   devise_for :users
 
   root :to => "pages#home"

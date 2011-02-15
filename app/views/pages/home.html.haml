@@ -1,3 +1,6 @@
 %h1 Home page
-%p Welcome to HAML
-%p=  @message 
+= link_to "Add practice", new_practice_entry_path
+- latest_practices.each do |practice_entry|
+  %p= practice_entry.user_practice.practice.name
+  %p= practice_entry.amount
+

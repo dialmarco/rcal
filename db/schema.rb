@@ -10,12 +10,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110214211712) do
+ActiveRecord::Schema.define(:version => 20110215030850) do
 
   create_table "default_practices", :force => true do |t|
     t.integer  "amount"
     t.integer  "practice_unit_id"
     t.integer  "practice_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "practice_entries", :force => true do |t|
+    t.integer  "amount"
+    t.date     "practice_date"
+    t.integer  "user_id"
+    t.integer  "user_practice_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
