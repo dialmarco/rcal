@@ -1,6 +1,10 @@
 %h1 Home page
 = link_to "Add practice", new_practice_entry_path
-- latest_practices.each do |practice_entry|
-  %p= practice_entry.user_practice.practice.name
-  %p= practice_entry.amount
+.timeline
+  - latest_practices.take(2).each do |practice_entry|
+    .timeline_entry
+      = practice_entry.practice_date
+      %p 
+        = practice_entry.user_practice.practice.name
+        = practice_entry.amount
 

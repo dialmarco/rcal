@@ -2,4 +2,6 @@
 = form_tag(:controller => 'practice_entries', :action => 'create') do
   = select_tag "practice", options_from_collection_for_select(practices, "id", "name")
   %p= text_field_tag("amount")
+  %p Date
+  = select_date()
   = submit_tag "Create Practice" 
