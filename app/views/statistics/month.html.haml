@@ -1,0 +1,7 @@
+%h1 current month
+#placeholder{ :style => "width:600px;height:300px;" }
+  - month_practices.each do |practice|
+    = practice.user_practice.practice.name
+
+%p hi
+= javascript_include_tag 'monthly_practice'

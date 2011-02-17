@@ -15,6 +15,8 @@ gem 'cancan'
 
 gem 'decent_exposure', "1.0.0.rc3 "
 
+gem "meta_where"
+
 group :development, :test do
   gem "rspec-rails", ">= 2.0.1"
   gem "factory_girl_rails"

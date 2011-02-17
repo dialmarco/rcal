@@ -1,0 +1,8 @@
+var monthly_series = new Array();
+<% again.each do |entry| %>
+monthly_series.push(new Array(<%= "#{entry[0]*1000}, #{entry[1]}" %>));
+<% end %>
+$(function () {
+  $.plot($("#placeholder"), [monthly_series], { xaxis: { mode: 'time', timeformat: "%y/%m/%d" } }) ;
+});
+
