@@ -1,5 +1,7 @@
 Calendar::Application.routes.draw do
 
+  resources :goals
+
   get "javascripts/monthly_practice"
 
   get "statistics/month"

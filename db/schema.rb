@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110215030850) do
+ActiveRecord::Schema.define(:version => 20110221015105) do
 
   create_table "default_practices", :force => true do |t|
     t.integer  "amount"
@@ -18,6 +18,16 @@ ActiveRecord::Schema.define(:version => 20110215030850) do
     t.integer  "practice_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "goals", :force => true do |t|
+    t.date     "start"
+    t.date     "end"
+    t.integer  "end_value"
+    t.integer  "start_value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_practice_id"
   end
 
   create_table "practice_entries", :force => true do |t|

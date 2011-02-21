@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Start:</b>
+  <%= @goal.start %>
+</p>
+
+<p>
+  <b>End:</b>
+  <%= @goal.end %>
+</p>
+
+<p>
+  <b>End value:</b>
+  <%= @goal.end_value %>
+</p>
+
+<p>
+  <b>Start value:</b>
+  <%= @goal.start_value %>
+</p>
+
+
+<%= link_to 'Edit', edit_goal_path(@goal) %> |
+<%= link_to 'Back', goals_path %>
