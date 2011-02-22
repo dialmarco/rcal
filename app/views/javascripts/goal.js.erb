@@ -1,0 +1,9 @@
+var goal_line = new Array();
+<% goal.each do |entry| %>
+  goal_line.push(new Array(<%= "#{entry[0]}, #{entry[1]}" %>));
+<% end %>
+$(function () {
+  $.plot($("#placeholder"), [{data : goal_line}}], { xaxis: { mode: 'time', timeformat: "%y/%m/%d" } }) ;
+});
+
+

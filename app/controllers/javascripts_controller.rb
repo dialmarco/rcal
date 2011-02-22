@@ -6,4 +6,8 @@ class JavascriptsController < ApplicationController
   def monthly_practice
   end
 
+  def goal
+    @goal = Goal.find(params[:id]) 
+  end
+
 end

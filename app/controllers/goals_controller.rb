@@ -5,6 +5,8 @@ class GoalsController < ApplicationController
   load_and_authorize_resource :user_practice, :through => :goal
 
   expose(:user_practices) { UserPractice.find_all_by_user_id(current_user.id).map { |up| [up.practice.name, up.id] } }
+  expose(:goal_practices) { PracticeEntry.goal_practices(@goal) }
+  expose(:actual) { PracticeEntry.actual_goal(@goal) }
 
   def index
   end
@@ -38,7 +40,7 @@ class GoalsController < ApplicationController
 
   def destroy
     @goal.destroy
-
     redirect_to(goals_url)
   end
+
 end

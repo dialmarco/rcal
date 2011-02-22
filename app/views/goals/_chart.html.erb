@@ -1,0 +1,13 @@
+<script type='text/javascript'>
+  $(function () {
+    var goal_line = new Array();
+    <% goal_practices.each do |entry| %>  
+      goal_line.push(new Array(<%= "#{entry[0]}, #{entry[1]}" %>));
+    <% end %>
+    var actual_line = new Array();
+    <% actual.each do |entry| %>
+      actual_line.push(new Array(<%= "#{entry[0]}, #{entry[1]}" %>));
+    <% end %>
+    $.plot($("#placeholder"), [{data:goal_line}, {data:actual_line}], { xaxis: { mode: 'time', timeformat: "%y/%m/%d" } }) ;
+  });
+</script> 

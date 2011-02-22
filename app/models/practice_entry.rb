@@ -29,4 +29,30 @@ class PracticeEntry < ActiveRecord::Base
     end
 
   end
+
+  def self.goal_practices(goal)
+    [[utc(goal.start), goal.start_value],[utc(goal.end), goal.end_value]]
+  end
+
+  def self.actual_goal(goal)
+    practices = where(:practice_date >= goal.start).where(:practice_date <= goal.end)
+    as_stats = [[utc(goal.start), goal.start_value]]
+    current_value = goal.start_value
+    (goal.start..goal.end).each do |day|
+      practice = practices.find { |pr| pr.practice_date == day }
+      if practice
+        current_value += practice.amount
+      end
+      as_stats << [utc(day), current_value]
+    end
+    as_stats
+  end
+
+  private
+
+  def self.utc(day)
+    day.to_time.to_i * 1000
+  end
+
+
 end
